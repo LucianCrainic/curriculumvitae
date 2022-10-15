@@ -1,0 +1,186 @@
+\documentclass[a4paper]{MagicalCV}
+
+% Removing page numbers
+\usepackage{fancyhdr}
+\let\olditem\item
+\renewcommand\item{\olditem\justifying}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Change the geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Defining your colors
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-purple}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% start document
+\begin{document}
+
+% Last update time
+\lastupdated
+
+% Title name
+\namesection{Lucian D.}{Crainic}{
+\homepage{https://luciancrainic.github.io/} \email{\href{mailto:fakegmail@gmail.com}{crainic.lucian@gmail.com}}} \phone{3270499569}
+
+% Column one
+\begin{minipage}[t]{0.32\textwidth} 
+
+% Education
+\cvsection{Education} 
+
+\subsection{Sapienza University}
+\descript{BSc in Computer Science}
+\cvevent{2020-In Progress}{Rome, IT} 
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item 
+\end{tightemize}
+\sectionsep
+
+\subsection{IIS Einstein-Bachelet}
+\descript{High School Diploma} 
+\cvevent{2015-2020}{Rome, IT} 
+\begin{tightemize}
+\item IT and Telecomunication
+\end{tightemize}
+\sectionsep
+
+% Links
+\cvsection{Links}
+
+\github{GitHub} \href{https://github.com/LucianCrainic}{\bf LucianCrainic}\\
+\linkedin{Linkedin} \href{https://www.linkedin.com/in/lucian-dorin-crainic-705510183/}{\bf Lucian Dorin Crainic}
+\sectionsep
+
+% Coursework
+\cvsection{Coursework}
+
+\subsection{Undergraduate}
+Python \\
+Discrete Math \\
+Java \\
+Computer Architecture \\
+Algorithms \\
+Algebra \\
+Operating Systems \\
+Databases \\
+Computer Networks \\
+Software Engineering \\
+Web and Software Architecture \\
+\textbf{Thesis: TBD.}
+\sectionsep
+
+% Skills
+\cvsection{Skills}
+
+\subsection{Programming}
+Python \textbullet{}   Java\textbullet{} Assembly \textbullet{} C \textbullet{} HTML/CSS  \textbullet{}
+JavaScript \textbullet{} GO \textbullet MySQL  \textbullet{}
+\sectionsep
+\subsection{Miscellaneous}
+Shell \textbullet{} \LaTeX \textbullet{} Microsoft Office  \textbullet{} Git  \textbullet{} REST API  \textbullet{} Docker  \textbullet{} Kubernetes \textbullet Adobe
+\sectionsep
+
+\cvsection{Other}
+
+\subsection{Languages}
+Italian - Native \\
+Romanian- Native \\
+English - Full \\
+Spanish - Limited
+ \sectionsep
+ 
+\subsection{Hobbies}
+Photography \textbullet{} Reading \textbullet{} Sim Racing \textbullet{}
+ Traveling 
+ \sectionsep
+
+% Column two
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+% Experience
+\cvsection{Experience}
+
+\runsubsection{Graphic Designer} \\
+\descript{Freelance Experience}
+\cvevent{2016-2017}{}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developed and implemented designs to existing and new product packaging. Developed business collateral including sell sheets, catalogs, brochures, posters, advertisements, and web assets. Prepared and sent final artwork to vendors to produce.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Management} \\
+\descript{KBM Consultants}
+\cvevent{21 March – 25 March 2019}{London, UK} 
+\vspace{\topsep}
+\begin{tightemize}
+\item Professional Resume writing and mentoring skills.
+\item Impact and uses of social media, creating leads and marketing it.
+\item Developing the data, product cycle.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Small Business} \\
+\descript{Alba Social Media Marketing}
+\cvevent{2018-2020}{} 
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Driven and ambitious Founder of a social media agency dedicated to continuous business improvement focused on enhancing revenue and streamlining business operations. 
+\end{tightemize}
+\sectionsep
+
+% Recent Projects
+\cvsection{Recent Projects} 
+
+\runsubsection{IPL Analysis} \\
+\descript{University of Leeds}
+\cvevent{Nov 2021 – Dec 2021}{Leeds, UK} 
+ A project under the University of Leeds to analyse data from 2008 to 2015 and discover patterns in the data such as trends, co-relations, probabilities, and used tools such as matplotlib, Pandas, Seaborn for data visualization.
+\sectionsep
+
+\runsubsection{IPL Analysis} \\
+\descript{University of Leeds}
+\cvevent{Nov 2021 – Dec 2021}{Leeds, UK} 
+ A project under the University of Leeds to analyse data from 2008 to 2015 and discover patterns in the data such as trends, co-relations, probabilities, and used tools such as matplotlib, Pandas, Seaborn for data visualization.
+\sectionsep
+
+% Recent Projects
+\cvsection{Strenghts} 
+
+\runsubsection{Critical Thinking} \\
+Able to think quickly, rationally and logically, even when i am in a stressful situation.
+\sectionsep
+
+\runsubsection{Proglem solving & decision making} \\
+ Able to analyze situations comprehensibely to arrive at the best situation.
+\sectionsep
+
+\runsubsection{Critical Thinking} \\
+ Open-mindness, patience and curiosity help me communicate and forge relationships with team members, customers, and complete strangers.
+\sectionsep
+
+
+
+\end{minipage} 
+\end{document}  
