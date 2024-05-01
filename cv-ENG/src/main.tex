@@ -1,0 +1,39 @@
+\documentclass[localFont,alternative,10pt,compact]{yaac-another-awesome-cv}
+
+\name{Lucian Dorin}{Crainic}
+\tagline{Computer Science Student | Software Engineer}
+%\photo{2.5cm}{darwiin}
+\socialinfo{
+	\linkedin{lucian-dorin-crainic}
+	\github{LucianCrainic}
+	\email{crainic.lucian@gmail.com}
+	\smartphone{+39 3270499569}
+	%\address{Via dei Cristofori 12, Roma (Italy)}\\
+	%\infos{22 November 2000, Hunedoara (Romania)}
+}
+
+% Uncomment the following line and use a value from 1.5cm to 2.5cm
+\setleftcolumnlength{3cm}
+
+% Uncomment to add the bibliography (see section_publications.tex)
+%addbibresource{my_publications.bib}
+
+\begin{document}
+
+	\makecvheader
+
+	\makecvfooter
+		{\selectlanguage{english}} 
+		{\tiny{I authorize the processing of my personal data pursuant to Legislative Decree no. 196 of 30 June 2003 and Article 13 
+		GDPR (General Data Protection Regulation).}}
+		{}
+	
+	% Sections
+	\input{sections/headline}
+	\input{sections/education}	
+	\input{sections/skills}			
+	\input{sections/projects}	
+	\input{sections/experience}	
+	\input{sections/lang-interests}
+
+\end{document}

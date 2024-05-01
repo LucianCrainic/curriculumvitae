@@ -1,22 +1,3 @@
-%% Copyright 2016 Christophe Roger
-%
-% Author:
-% Christophe Roger (Darwiin)
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3c
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   https://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
-% The Current Maintainer of this work is M. C. Roger.
-%
-% This work consists of the files awesome-source-cv.cls
-
 \ProvidesClass{yaac-another-awesome-cv}[2020/03/24  v2.3.1 'YAAC: Another Awesome CV' Class]
 
 \def\@@ptsize{10pt}
@@ -68,8 +49,8 @@
 %A Few Useful Packages
 \RequirePackage[english,french]{babel}
 \RequirePackage[utf8]{luainputenc}
-\RequirePackage{fontspec} 					                 % for loading fonts
-\RequirePackage{url,parskip} 	    % other packages for formatting
+\RequirePackage{fontspec} 					                 
+\RequirePackage{url,parskip} 	   
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fullpage}
 \RequirePackage[margin=1.5cm]{geometry}
@@ -86,7 +67,6 @@
 \RequirePackage{ifthen}
 
 
-%\DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
 \definecolor{basecolor}{HTML}{000066}       %BLUE
 
@@ -138,7 +118,7 @@
 
 % Setup CV sections
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2pt}{2pt}
+\titlespacing{\section}{0pt}{1pt}{1pt}
 
 % Configure list
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
@@ -171,7 +151,7 @@
 
 %New length definition
 \newlength{\fulllength}
-\setlength{\fulllength}{17.8cm}
+\setlength{\fulllength}{16.8cm}
 
 \newlength{\leftcolumnlength}
 \setlength{\leftcolumnlength}{2.5cm}
@@ -254,7 +234,7 @@
 
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{https://www.linkedin.com/in/#1/fr}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{https://www.linkedin.com/in/}{linkedin.com/in/#1}}
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
@@ -471,7 +451,6 @@
 \else
   \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 \fi
-
 
 
 % Define the 'projects' environment
