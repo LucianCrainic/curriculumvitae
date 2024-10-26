@@ -66,9 +66,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
 
-
-% Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{333333}       
 
 \ifundef{\@green} {
   \ifundef{\@red} {
