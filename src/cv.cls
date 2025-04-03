@@ -49,8 +49,8 @@
 %A Few Useful Packages
 \RequirePackage[english,french]{babel}
 \RequirePackage[utf8]{luainputenc}
-\RequirePackage{fontspec} 					                 
-\RequirePackage{url,parskip} 	   
+\RequirePackage{fontspec}
+\RequirePackage{url,parskip}
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fullpage}
 \RequirePackage[margin=1.5cm]{geometry}
@@ -66,7 +66,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
 
-\definecolor{basecolor}{HTML}{333333}       
+\definecolor{basecolor}{HTML}{333333}
 
 \ifundef{\@green} {
   \ifundef{\@red} {
@@ -93,14 +93,14 @@
 %\definecolor{linkcolour}{rgb}{0,0.2,0.6}
 
 \if@showLinks
-  \hypersetup{%
-    breaklinks
-  }%
+\hypersetup{%
+  breaklinks
+}%
 \else
-  \hypersetup{%
-    pdfborder = {0 0 0},
-    breaklinks
-  }%
+\hypersetup{%
+  pdfborder = {0 0 0},
+  breaklinks
+}%
 \fi
 
 % Setup fancyhdr package
@@ -138,13 +138,13 @@
   %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
   \setmainfont{Source Sans Pro Light}[
     BoldFont = SourceSansPro-Regular,
-    ItalicFont= Source Sans Pro Light Italic]
+  ItalicFont= Source Sans Pro Light Italic]
 }
 {
   \setmainfont{SourceSansPro-Light}[
     Path = fonts/,
     BoldFont = SourceSansPro-Regular,
-    ItalicFont = SourceSansPro-LightIt]
+  ItalicFont = SourceSansPro-LightIt]
 }
 
 %New length definition
@@ -179,7 +179,6 @@
 \newcommand{\mediumSymbol}{\faMedium}
 \newcommand{\bitbucketSymbol}{\faBitbucket}
 \newcommand{\websiteSymbol}{\faLink}
-
 
 \newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
 \newcommand\important[1]{\textbf #1}
@@ -273,34 +272,34 @@
 % Render author's tagline
 \newcommand\resumetitle[1]{
   \ifundef{\@alternative}{
-	 \par{
-	 	 \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
-	 }
-	 \bigskip
+    \par{
+      \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
+    }
+    \bigskip
   }{
     \color{accentcolor}\textbf{\large{#1}}\color{black}
   }
 }
 
 \newcommand\idphoto{
-	\ifthenelse{\equal{\@photoshape}{square}}{
-		% Draw square photo
-		\tikz\path[fill overzoom image={\@photo}]rectangle(\linewidth,\linewidth);
-	}{
-		\ifthenelse{\equal{\@photoshape}{roundedsquare}}{
-			% Draw square photo with rounded corners
-			\tikz\path[fill overzoom image={\@photo}][rounded corners=2mm]rectangle(\linewidth,\linewidth);
-		}{
-			\ifthenelse{\equal{\@photoshape}{squircle}}{
-				% Draw squircle photo
-				\tikz\path[fill overzoom image={\@photo}][rounded corners=8mm]rectangle(\linewidth,\linewidth);
-				}{
-					% Draw circular photo
-					\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-				}
-		}
+  \ifthenelse{\equal{\@photoshape}{square}}{
+    % Draw square photo
+    \tikz\path[fill overzoom image={\@photo}]rectangle(\linewidth,\linewidth);
+  }{
+    \ifthenelse{\equal{\@photoshape}{roundedsquare}}{
+      % Draw square photo with rounded corners
+      \tikz\path[fill overzoom image={\@photo}][rounded corners=2mm]rectangle(\linewidth,\linewidth);
+    }{
+      \ifthenelse{\equal{\@photoshape}{squircle}}{
+        % Draw squircle photo
+        \tikz\path[fill overzoom image={\@photo}][rounded corners=8mm]rectangle(\linewidth,\linewidth);
+      }{
+        % Draw circular photo
+        \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+      }
+    }
 
-	}
+  }
 }
 
 % Define social entries to print in header
@@ -317,23 +316,23 @@
     % }
     \color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
     \small{\@socialinfo}
-    \end{minipage}
-    % \ifdef{\@photodiameter}{
-    %   \begin{minipage}{\@photodiameter}
-    %     \idphoto
-    %   \end{minipage}
-    % }{}
-    \resumetitle{\@tagline}
-  }{
-    \ifundef{\@photodiameter}{
-      \begin{minipage}{\linewidth}
+  \end{minipage}
+  % \ifdef{\@photodiameter}{
+  %   \begin{minipage}{\@photodiameter}
+  %     \idphoto
+  %   \end{minipage}
+  % }{}
+  \resumetitle{\@tagline}
+}{
+  \ifundef{\@photodiameter}{
+    \begin{minipage}{\linewidth}
     }{
       \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
-    }
-    \user{\@firstname}{\@lastname}\\
-    \resumetitle{\@tagline}
-    \smallskip\\
-    \small{\@socialinfo}
+      }
+      \user{\@firstname}{\@lastname}\\
+      \resumetitle{\@tagline}
+      \smallskip\\
+      \small{\@socialinfo}
     \end{minipage}
     % \ifdef{\@photodiameter}{
     %   \begin{minipage}{\@photodiameter}
@@ -354,14 +353,15 @@
 }
 
 % Resume part title definition
-\newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#2\enspace \textsc{#1}}{#1}}}
+\newcommand\sectionTitle[2]{
+\section{\texorpdfstring{\color{accentcolor}#2\enspace \textsc{#1}}{#1}}}
 
 % Define the 'keywords' environment
 \newenvironment{keywords}{%
   \renewcommand{\arraystretch}{1.1}
 
   \begin{tabular}{>{}r>{}p{13cm}}
-}{%
+  }{%
   \end{tabular}
 }
 
@@ -377,7 +377,7 @@
 % Define the 'scholarship' environment
 \newenvironment{scholarship}{%
   \begin{tabular}{Y p{\rightcolumnlength}}
-}{%
+  }{%
   \end{tabular}
 }
 
@@ -390,7 +390,7 @@
 % Define the 'skills' environment
 \newenvironment{skills}{%
   \begin{longtable}{R{\leftcolumnlength}p{\rightcolumnlength}}
-}{%
+  }{%
   \end{longtable}
 }
 
@@ -405,7 +405,7 @@
 % Define the 'experiences' environment
 \newenvironment{experiences}{%
   \begin{longtable}{R{\leftcolumnlength}|E}
-}{%
+  }{%
   \end{longtable}
 }
 
@@ -418,12 +418,13 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\experience[7]{
-  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
-  					         #6
-                   \end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
-  }
+  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}                   \\*
+  \textbf{#5}    &
+  \begin{minipage}[t]{\rightcolumnlength}
+    #6
+  \end{minipage}                    \\*
+  & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}}   \\
+}
 
 % Render a consultant experience in the experiences environment
 % Usage:
@@ -435,26 +436,26 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\consultantexperience[9]{
-  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \emph{#6} pour \textsc{#7}                       				\\*
-  				       & \begin{minipage}[t]{\rightcolumnlength}
-  						        #8
-                   	\end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
-  }
+  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}                   \\*
+  \textbf{#5}    & \emph{#6} pour \textsc{#7}                               \\*
+  &
+  \begin{minipage}[t]{\rightcolumnlength}
+    #8
+  \end{minipage}                    \\*
+  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}}   \\
+}
 
 % Define the empty separator macro with different spacing according to document class option 'compact'
 \if@isCompact
-  \newcommand\emptySeparator{\multicolumn{2}{c}{}\\[-0.6em]}
+\newcommand\emptySeparator{\multicolumn{2}{c}{}\\[-0.6em]}
 \else
-  \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+\newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 \fi
-
 
 % Define the 'projects' environment
 \newenvironment{projects}{%
   \begin{longtable}{l}
-}{%
+  }{%
   \end{longtable}
 }
 
@@ -467,14 +468,13 @@
 %   {<techno1>,<techno2>}
 \newcommand\project[5]{
   \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
-    \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
+    \textbf{#1} \hfill \textsc{#2}\smallskip\\
     #3\\
     #4\smallskip\\
     \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
   \end{minipage}
   \\*
 }
-
 
 \newcommand*\twocolumnsection[2]{
   \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
@@ -484,7 +484,7 @@
   \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
     #2
   \end{minipage}
-  }
+}
 
 % Define the 'referencees' environment
 \newenvironment{referees}{%
@@ -503,7 +503,7 @@
       \quad \faPhone & #5 \\
     \end{tabular}
   \end{minipage}%
-  }
+}
 
 \newcommand*\refereeMailOnly[4]{
   \hspace{1em}
@@ -518,11 +518,11 @@
 
 % Define the 'publications' environment
 \newenvironment{publications}{%
-\vspace{5pt}
+  \vspace{5pt}
 }
 
 %% Bibliography
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} 
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
 
 \newcounter{bibitem}
 \AtBeginBibliography{\setcounter{bibitem}{1}}
@@ -540,5 +540,5 @@
 \defbibheading{subbibliography}{\vskip 5pt {\@subbibfont\hspace{0pt}#1}\par}
 
 \defbibfilter{booksandchapters}{%
-( type=book or type=incollection )
+  ( type=book or type=incollection )
 }

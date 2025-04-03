@@ -1,19 +1,5 @@
-%%
-%% This is file `xetex-inputenc.sty',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% xetex-inputenc.dtx  (with options: `package')
-%% 
-%%   ___________________________________
-%%   The xetex-inputenc override package
-%%   (C) 2009  Will Robertson
-%%   License information appended
-%% 
-%% 
 \ProvidesPackage{xetex-inputenc}
-  [2009/03/09 v0.2 XeTeX-specific inputenc package]
+[2009/03/09 v0.2 XeTeX-specific inputenc package]
 \def\xIE@encoding#1#2{%
   \DeclareOption{#1}{%
     \xIE@set{#2}
@@ -64,20 +50,3 @@
 \AtBeginDocument{%
   \immediate\write\@auxout{\string\XeTeXinputencoding "utf8"}%
 }
-%% 
-%% Copyright (C) 2009 by Will Robertson <wspr81@gmail.com>
-%% 
-%% Distributable under the LaTeX Project Public License,
-%% version 1.3c or higher (your choice). The latest version of
-%% this license is at: http://www.latex-project.org/lppl.txt
-%% 
-%% This work is "maintained" (as per LPPL maintenance status)
-%% by Will Robertson.
-%% 
-%% This work consists of the file  xetex-inputenc.dtx
-%%           and the derived files xetex-inputenc.sty,
-%%                                 xetex-inputenc.ins, and
-%%                                 xetex-inputenc.pdf.
-%% 
-%%
-%% End of file `xetex-inputenc.sty'.
