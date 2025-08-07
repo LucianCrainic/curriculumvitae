@@ -66,7 +66,8 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
 
-\definecolor{basecolor}{HTML}{333333}
+% Emerald Green CV Colors
+\definecolor{basecolor}{HTML}{00674F}
 
 \ifundef{\@green} {
   \ifundef{\@red} {
