@@ -12,6 +12,7 @@
 
 \newif\if@showLinks   \@showLinksfalse
 \newif\if@isCompact   \@isCompactfalse
+\newif\if@isDarkTheme \@isDarkThemefalse
 
 \DeclareOption{green}{
   \def\@green{green}
@@ -42,6 +43,8 @@
 
 \DeclareOption{showLinks}{ \@showLinkstrue}
 \DeclareOption{compact}{ \@isCompacttrue}
+\DeclareOption{light}{ \@isDarkThemefalse}
+\DeclareOption{dark}{ \@isDarkThemetrue}
 
 \ProcessOptions
 
@@ -58,6 +61,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
 \RequirePackage{array}
+\RequirePackage{colortbl}
 \RequirePackage{enumitem}
 \RequirePackage{longtable}
 \RequirePackage{etoolbox}
@@ -66,29 +70,35 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
 
-% Emerald Green CV Colors
-\definecolor{basecolor}{HTML}{00674F}
+% Portfolio color system, mirrored from luciancrainic.github.io.
+\if@isDarkTheme
+  \definecolor{cvPage}{HTML}{111316}
+  \definecolor{cvText}{HTML}{EEF0F3}
+  \definecolor{cvTextSoft}{HTML}{B5BAC3}
+  \definecolor{cvTextFaint}{HTML}{858C98}
+  \definecolor{cvBorder}{HTML}{2D3239}
+  \definecolor{cvBorderStrong}{HTML}{434A54}
+  \definecolor{cvAccent}{HTML}{8D93FF}
+  \definecolor{cvAccentText}{HTML}{BCC0FF}
+\else
+  \definecolor{cvPage}{HTML}{F6F6F3}
+  \definecolor{cvText}{HTML}{17191D}
+  \definecolor{cvTextSoft}{HTML}{525761}
+  \definecolor{cvTextFaint}{HTML}{676C75}
+  \definecolor{cvBorder}{HTML}{D9DAD5}
+  \definecolor{cvBorderStrong}{HTML}{B9BCB7}
+  \definecolor{cvAccent}{HTML}{4D55D7}
+  \definecolor{cvAccentText}{HTML}{3038A6}
+\fi
 
-\ifundef{\@green} {
-  \ifundef{\@red} {
-    \ifundef{\@indigo}{
-      \ifundef{\@orange} {
-        \ifundef{\@monochrome} {}
-        { \definecolor{basecolor}{HTML}{000000}}
-      }
-      { \definecolor{basecolor}{HTML}{e68a00} }
-    }
-    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
-  }
-  { \definecolor{basecolor}{HTML}{b30000} }     %RED
-}
-{ \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
+% Compatibility aliases used by the original CV commands.
+\colorlet{basecolor}{cvAccent}
+\colorlet{linkcolor}{cvAccentText}
+\colorlet{accentcolor}{cvAccent}
+\colorlet{symbolcolor}{cvAccent}
+\colorlet{darkGrey}{cvBorderStrong}
 
-\definecolor{darkGrey}{HTML}{989898}
-
-\colorlet{linkcolor}{basecolor}
-\colorlet{accentcolor}{linkcolor!90}
-\colorlet{symbolcolor}{linkcolor!85}
+\AtBeginDocument{\pagecolor{cvPage}\color{cvText}\arrayrulecolor{cvBorderStrong}}
 
 % Setup hyperref package, and colours for links
 %\definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -116,7 +126,7 @@
 %\font\fb=''[cmr10]''                      % for use with \LaTeX command
 
 % Setup CV sections
-\titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\Large\raggedright\color{accentcolor}}{}{0em}{}[\color{cvBorder}\titlerule]
 \titlespacing{\section}{0pt}{1pt}{1pt}
 
 % Configure list
@@ -181,18 +191,18 @@
 \newcommand{\bitbucketSymbol}{\faBitbucket}
 \newcommand{\websiteSymbol}{\faLink}
 
-\newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
+\newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{cvText} }
 \newcommand\important[1]{\textbf #1}
 
 % Create a tag
 % Usage: \cvtag{<tag label>}
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=cvBorderStrong,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex,text=cvTextSoft]{#1};
 }
 
 % Render author's name
 % Usage: \user{<firstanme>}{<lastname>}
-\newcommand\user[2]{\color{accentcolor}{\LARGE #1 \textsc{\textbf{#2}}}\color{Black}}
+\newcommand\user[2]{\color{accentcolor}{\LARGE #1 \textsc{\textbf{#2}}}\color{cvText}}
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
@@ -274,11 +284,11 @@
 \newcommand\resumetitle[1]{
   \ifundef{\@alternative}{
     \par{
-      \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
+      \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{cvText}}\par
     }
     \bigskip
   }{
-    \color{accentcolor}\textbf{\large{#1}}\color{black}
+    \color{accentcolor}\textbf{\large{#1}}\color{cvText}
   }
 }
 
@@ -315,7 +325,7 @@
     % }{
     %   \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
     % }
-    \color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
+    \color{accentcolor}\user{\@firstname}{\@lastname}\color{cvText}\\
     \small{\@socialinfo}
   \end{minipage}
   % \ifdef{\@photodiameter}{
@@ -348,14 +358,14 @@
 % Usage: \makecvfooter{<left>}{<center>}{<right>}
 \newcommand*{\makecvfooter}[3]{%
   \fancyfoot{}
-  \fancyfoot[L]{#1}
-  \fancyfoot[C]{#2}
-  \fancyfoot[R]{#3}
+  \fancyfoot[L]{\textcolor{cvTextSoft}{#1}}
+  \fancyfoot[C]{\textcolor{cvTextSoft}{#2}}
+  \fancyfoot[R]{\textcolor{cvTextSoft}{#3}}
 }
 
 % Resume part title definition
 \newcommand\sectionTitle[2]{
-\section{\texorpdfstring{\color{accentcolor}#2\enspace \textsc{#1}}{#1}}}
+\section{\texorpdfstring{#2\enspace \textsc{#1}}{#1}}}
 
 % Define the 'keywords' environment
 \newenvironment{keywords}{%
@@ -455,9 +465,9 @@
 
 % Define the 'projects' environment
 \newenvironment{projects}{%
-  \begin{longtable}{l}
+  \par
   }{%
-  \end{longtable}
+  \par
 }
 
 % Define the 'project' entry in the 'projects' environment
@@ -468,13 +478,14 @@
 %   {<Project description>}
 %   {<techno1>,<techno2>}
 \newcommand\project[5]{
-  \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
+  \noindent
+  \begin{minipage}[t]{\linewidth}
     \textbf{#1} \hfill \textsc{#2}\smallskip\\
     #3\\
     #4\smallskip\\
-    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}
   \end{minipage}
-  \\*
+  \par\smallskip
 }
 
 \newcommand*\twocolumnsection[2]{
@@ -515,31 +526,4 @@
       \quad \mailSymbol & \href{mailto:#4}{#4} \\
     \end{tabular}
   \end{minipage}%
-}
-
-% Define the 'publications' environment
-\newenvironment{publications}{%
-  \vspace{5pt}
-}
-
-%% Bibliography
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
-
-\newcounter{bibitem}
-\AtBeginBibliography{\setcounter{bibitem}{1}}
-\AtEveryBibitem{\hspace{1em}\makebox[1.5em][l]{{\thebibitem}\stepcounter{bibitem}.}}
-
-\setlength{\bibitemsep}{1.5ex}
-\setlength{\bibhang}{2.7em}
-\NewBibliographyString{retrieved}
-\NewBibliographyString{from}
-
-\urlstyle{tt}
-
-\def\@subbibfont{\large\color{accentcolor}}
-\newcommand\subbibfont[1]{\gdef\@subbibfont{#1}}
-\defbibheading{subbibliography}{\vskip 5pt {\@subbibfont\hspace{0pt}#1}\par}
-
-\defbibfilter{booksandchapters}{%
-  ( type=book or type=incollection )
 }

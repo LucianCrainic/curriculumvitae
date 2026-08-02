@@ -1,4 +1,11 @@
 .DS_Store
+
+# CV build output: keep only the two published PDFs.
+/output/pdf/*
+!/output/pdf/Lucian-Crainic-CV-light.pdf
+!/output/pdf/Lucian-Crainic-CV-dark.pdf
+/src/main.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
