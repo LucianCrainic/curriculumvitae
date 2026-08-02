@@ -4,11 +4,11 @@
 
 <p align="center">
   <a href="./output/pdf/Lucian-Crainic-CV-light.pdf">
-    <img src="https://img.shields.io/badge/OPEN-LIGHT_CV-4D55D7?style=for-the-badge" alt="Open the light CV">
+    <img src="./assets/open-light-cv.png" alt="Open the light CV" width="360">
   </a>
   &nbsp;
   <a href="./output/pdf/Lucian-Crainic-CV-dark.pdf">
-    <img src="https://img.shields.io/badge/OPEN-DARK_CV-111316?style=for-the-badge" alt="Open the dark CV">
+    <img src="./assets/open-dark-cv.png" alt="Open the dark CV" width="360">
   </a>
 </p>
 
