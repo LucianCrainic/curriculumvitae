@@ -14,7 +14,7 @@
 
 # Curriculum Vitae
 
-My professional curriculum vitae, available in light and dark themes matching [luciancrainic.github.io](https://luciancrainic.github.io).
+My professional curriculum vitae, available in light and dark themes.
 
 ## Build
 
