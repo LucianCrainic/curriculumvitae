@@ -1,18 +1,20 @@
+<p align="center">
+  <img src="./assets/cv-banner.png" alt="Lucian D. Crainic - Curriculum Vitae" width="100%">
+</p>
+
+<p align="center">
+  <a href="./output/pdf/Lucian-Crainic-CV-light.pdf">
+    <img src="https://img.shields.io/badge/OPEN-LIGHT_CV-4D55D7?style=for-the-badge" alt="Open the light CV">
+  </a>
+  &nbsp;
+  <a href="./output/pdf/Lucian-Crainic-CV-dark.pdf">
+    <img src="https://img.shields.io/badge/OPEN-DARK_CV-111316?style=for-the-badge" alt="Open the dark CV">
+  </a>
+</p>
+
 # Curriculum Vitae
 
-<!--
-CV BANNER PLACEHOLDER
-Replace this comment with the banner image, for example:
-![Lucian Crainic - Curriculum Vitae](./assets/cv-banner.png)
--->
-
 My professional curriculum vitae, available in light and dark themes matching [luciancrainic.github.io](https://luciancrainic.github.io).
-
-## View the CV
-
-| Light theme | Dark theme |
-| :---: | :---: |
-| [Open the light CV](./output/pdf/Lucian-Crainic-CV-light.pdf) | [Open the dark CV](./output/pdf/Lucian-Crainic-CV-dark.pdf) |
 
 ## Build
 
